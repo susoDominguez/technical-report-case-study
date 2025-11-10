@@ -17,138 +17,195 @@
 @prefix vocab4i: <http://anonymous.org/vocab4i/> .
 @prefix tmr4i: <http://anonymous.org/vocab4i/> .
 
-:DrugCatNSAID  a                   vocab:DrugType , owl:NamedIndividual ;
+data:DrugCatNSAID  a                   vocab:DrugType , owl:NamedIndividual ;
         rdfs:label                 "NSAID"@en ;
-        vocab:hasGroupingCriteria  :TrAntinflammatory , :SitNonSteroidalDrug .
+        vocab:hasGroupingCriteria  data:TrAntinflammatory , data:SitNonSteroidalDrug ;
+        vocab:hasSctId  <http://snomed.info/sct#16403005> ;
+        vocab:hasSctLbl  "Non-steroidal anti-inflammatory agent (product)"@en .
 
-:DrugTTramadol  a   vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label  "Tramadol"@en .
+data:ActAdministerNSAID  a          owl:NamedIndividual , vocab:DrugAdministrationType ;
+        rdfs:label              "administer product containing NSAID"@en ;
+        vocab:administrationOf  data:DrugCatNSAID ;
+        vocab:hasSctId          <http://snomed.info/sct#16403005> ;
+        vocab:hasSctLbl         "Non-steroidal anti-inflammatory agent (product)"@en .
 
-:DrugCatAnalgesic  a               vocab:DrugType , owl:NamedIndividual ;
+data:DrugCatAnalgesic  a               vocab:DrugType , owl:NamedIndividual ;
         rdfs:label                 "Analgesic"@en ;
-        vocab:hasGroupingCriteria  :TrPainkiller .
+        vocab:hasGroupingCriteria  data:TrPainkiller ;
+        vocab:hasSctId  <http://snomed.info/sct#373265006> ;
+        vocab:hasSctLbl  "Analgesic (substance)"@en .
 
-:ActAdministerPlateletAggregationInhibitor
-        a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer Platelet Aggregation Inhibitor"@en ;
-        vocab:administrationOf  :DrugCatPlateletAggregationInhibitor .
-
-:DrugCatPlateletAggregationInhibitor
-        a                          vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label                 "Platelet Aggregation Inhibitor"@en ;
-        vocab:hasGroupingCriteria  :TrDecreaseBC .
-
-:DrugTDipyridamole  a  vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label  "Dipyridamole"@en .
-
-:ActAdministerTramadol
-        a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer Tramadol"@en ;
-        vocab:administrationOf  :DrugTTramadol .
-
-:ActAdministerAnalgesic
+data:ActAdministerAnalgesic
         a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
         rdfs:label              "administer Analgesic"@en ;
-        vocab:administrationOf  :DrugCatAnalgesic .
+        vocab:administrationOf  data:DrugCatAnalgesic ;
+        vocab:hasSctId          <http://snomed.info/sct#373265006> ;
+        vocab:hasSctLbl         "Analgesic (substance)"@en ;
+        vocab:subsumes          data:ActAdministerTramadol , data:ActAdministerNSAID .
 
-:DrugCatAntiBacterialAgent
+data:DrugTTramadol  a   vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label  "Tramadol"@en ;
+        vocab:hasGroupingCriteria  data:TrPainkiller ;
+        vocab:hasSctId  <http://snomed.info/sct#386858008> ;
+        vocab:hasSctLbl  "Tramadol (substance)"@en .
+
+data:ActAdministerTramadol
+        a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
+        rdfs:label              "administer Tramadol"@en ;
+        vocab:administrationOf  data:DrugTTramadol ;
+        vocab:hasSctId          <http://snomed.info/sct#386858008> ;
+        vocab:hasSctLbl         "Tramadol (substance)"@en .
+        # vocab:subsumes          :ActAdministerSubsumed_B .
+
+
+data:ActAdministerPlateletAggregationInhibitor
+        a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
+        rdfs:label              "administer platelet aggregation inhibitor therapy"@en ;
+        vocab:administrationOf  data:DrugCatPlateletAggregationInhibitor ;
+        vocab:hasSctId          <http://snomed.info/sct#840595002> ;
+        vocab:hasSctLbl         "Platelet aggregation inhibitor therapy (procedure)"@en .
+        # vocab:subsumes          :ActAdministerSubsumed_B .
+
+data:DrugCatPlateletAggregationInhibitor
+        a                          vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label                 "Platelet Aggregation Inhibitor"@en ;
+        vocab:hasGroupingCriteria  data:TrDecreaseBC ;
+        vocab:hasSctId  <http://snomed.info/sct#386858008> ;
+        vocab:hasSctLbl         "Substance with platelet aggregation inhibitor mechanism of action (substance)"@en .
+
+
+data:DrugTDipyridamole  a  vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label  "Dipyridamole"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#387371005> ;
+        vocab:hasSctLbl  "Dipyridamole (substance)"@en .
+
+data:ActAdministerDipyridamole
+        a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
+        rdfs:label              "Administration of dipyridamole"@en ;
+        vocab:administrationOf  data:DrugTDipyridamole ;
+        vocab:hasSctId          <http://snomed.info/sct#764863008> ;
+        vocab:hasSctLbl         "Administration of dipyridamole (procedure)"@en .
+
+
+data:DrugCatAntiBacterialAgent
         a           vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label  "Anti-Bacterial Agent"@en .
+        rdfs:label  "Antibacterial"@en ;
+        vocab:hasGroupingCriteria  data:TrAntibacterialAgent ;
+        vocab:hasSctId  <http://snomed.info/sct#419241000> ;
+        vocab:hasSctLbl  "Substance with antibacterial mechanism of action (substance)"@en .
 
-:DrugTInsulin  a    vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label  "Insulin"@en .
-
-:ActAdministerAspirin
+data:ActAdministerAntiBacterialAgent
         a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer Aspirin"@en ;
-        vocab:administrationOf  :DrugTAspirin .
+        rdfs:label              "administer medicinal product acting as antibacterial agent"@en ;
+        vocab:administrationOf  data:DrugCatAntiBacterialAgent ;
+        vocab:hasSctId          <http://snomed.info/sct#346325008> ;
+        vocab:hasSctLbl         "Medicinal product acting as antibacterial agent (product)"@en .  
 
-:DrugTAspirin  a    vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label  "Aspirin"@en .
-
-:ActAdministerDipyridamole
+data:ActAdministerAspirin
         a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer Dipyridamole"@en ;
-        vocab:administrationOf  :DrugTDipyridamole .
+        rdfs:label              "Administration of aspirin"@en ;
+        vocab:administrationOf  data:DrugTAspirin ;
+        vocab:hasSctId          <http://snomed.info/sct#431463004> ;
+        vocab:hasSctLbl         "Administration of aspirin (procedure)"@en .
 
-:DrugCatNonSteroidal  a            vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label                 "Non-Steroidal Drug Type"@en ;
-        vocab:hasGroupingCriteria  :SitNonSteroidalDrug .
+data:DrugTAspirin  a    vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label  "Aspirin"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#387458008> ;
+        vocab:hasSctLbl  "Aspirin (substance)"@en .
 
-:ActAdministerAntiBacterialAgent
+data:ActAdministerPPI  a            owl:NamedIndividual , vocab:DrugAdministrationType ;
+        rdfs:label              "administer Proton pump inhibitor therapy"@en ;
+        vocab:administrationOf  data:DrugCatPPI ;
+        vocab:hasSctId          <http://snomed.info/sct#870251000> ;
+        vocab:hasSctLbl         "Proton pump inhibitor therapy (procedure)"@en .
+
+data:DrugCatPPI  a      vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label  "Proton pump inhibitor (PPI)"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#372525000> ;
+        vocab:hasSctLbl  "Substance with hydrogen/potassium adenosine triphosphatase enzyme system inhibitor mechanism of action (substance)"@en .
+
+
+data:ActAdministerIbuprofen
         a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer Anti-Bacterial Agent"@en ;
-        vocab:administrationOf  :DrugCatAntiBacterialAgent .
+        rdfs:label              "administer product containing ibuprofen"@en ;
+        vocab:administrationOf  data:DrugTIbuprofen ;
+        vocab:hasSctId          <http://snomed.info/sct#38268001> ;
+        vocab:hasSctLbl         "Product containing ibuprofen (medicinal product)"@en .
 
-:ActAdministerNonSteroidal
-        a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer NonSteroidal"@en ;
-        vocab:administrationOf  :DrugCatNonSteroidal .
+data:DrugTIbuprofen  a  vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label  "Ibuprofen"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#387207008> ;
+        vocab:hasSctLbl  "Ibuprofen (substance)"@en .
 
-:ActAdministerPPI  a            owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer PPI"@en ;
-        vocab:administrationOf  :DrugCatPPI .
-
-:DrugCatPPI  a      vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label  "PPI"@en .
-
-:ActAdministerIbuprofen
-        a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer Ibuprofen"@en ;
-        vocab:administrationOf  :DrugTIbuprofen .
-
-:DrugTIbuprofen  a  vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label  "Ibuprofen"@en .
-
-:ActAdministerClopidogrel
+data:ActAdministerClopidogrel
         a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
         rdfs:label              "administer Clopidogrel"@en ;
-        vocab:administrationOf  :DrugTClopidogrel .
+        vocab:administrationOf  data:DrugTClopidogrel ;
+        vocab:hasSctId          <http://snomed.info/sct#386952008> ;
+        vocab:hasSctLbl         "Clopidogrel (substance)"@en .
 
-:DrugTClopidogrel  a  vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label  "Clopidogrel"@en .
+data:DrugTClopidogrel  a  vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label  "Clopidogrel"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#386952008> ;
+        vocab:hasSctLbl  "Clopidogrel (substance)"@en .
 
-:ActAdministerAntiHypertensiveAgent
+data:ActAdministerAntiHypertensiveAgent
         a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer Anti Hypertensive"@en ;
-        vocab:administrationOf  :DrugCatAntiHypertensiveAgent .
+        rdfs:label              "administer Antihypertensive agent"@en ;
+        vocab:administrationOf  data:DrugCatAntiHypertensiveAgent ;     
+        vocab:hasSctId          <http://snomed.info/sct#372586001> ;
+        vocab:hasSctLbl         "Antihypertensive agent (substance)"@en .
 
-:DrugCatAntiHypertensiveAgent
+data:DrugCatAntiHypertensiveAgent
         a                          vocab:DrugType , owl:NamedIndividual ;
         rdfs:label                 "Anti Hypertensive"@en ;
-        vocab:hasGroupingCriteria  :TrDecreaseBP .
+        vocab:hasGroupingCriteria  data:TrDecreaseBP ;
+        vocab:hasSctId  <http://snomed.info/sct#372586001> ;
+        vocab:hasSctLbl  "Antihypertensive agent (substance)"@en .
 
-:ActAdministerInsulin
+data:ActAdministerInsulin
         a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer Insulin"@en ;
-        vocab:administrationOf  :DrugTInsulin .
+        rdfs:label              "Administration of insulin"@en ;
+        vocab:administrationOf  data:DrugTInsulin ;
+        vocab:hasSctId          <http://snomed.info/sct#39543009> ;
+        vocab:hasSctLbl         "Administration of insulin (procedure)"@en .
 
-:ActAdministerNSAID  a          owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer NSAID"@en ;
-        vocab:administrationOf  :DrugCatNSAID .
+data:DrugTInsulin  a    vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label  "Insulin"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#67866001> ;
+        vocab:hasSctLbl  "Insulin (substance)"@en .
 
-:ActAdministerThiazide
+data:ActAdministerThiazide
         a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
-        rdfs:label              "administer Thiazide"@en ;
-        vocab:administrationOf  :DrugCatThiazide ;
-        vocab:subsumes          :ActAdministerBendroflumethiazide .
+        rdfs:label              "administer Thiazide diuretic"@en ;
+        vocab:administrationOf  data:DrugCatThiazide ;
+        vocab:subsumes          data:ActAdministerBendroflumethiazide .
+        vocab:hasSctId          <http://snomed.info/sct#860766002> ;
+        vocab:hasSctLbl         "Thiazide diuretic (substance)"@en .
 
-:DrugCatThiazide  a  vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label  "Thiazide"@en .
+data:DrugCatThiazide  a  vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label  "Thiazide"@en ;
+        vocab:hasGroupingCriteria  data:TrDecreaseBP ;
+        vocab:hasSctId  <http://snomed.info/sct#860766002> ;
+        vocab:hasSctLbl  "Thiazide (substance)"@en .
 
-:ActAdministerBendroflumethiazide
+data:ActAdministerBendroflumethiazide
         a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
         rdfs:label              "Administer Bendroflumethiazide"@en ;
-        vocab:administrationOf  :DrugTBendroflumethiazide .
+        vocab:administrationOf  data:DrugTBendroflumethiazide ;
+        vocab:hasSctId          <http://snomed.info/sct#387520007> ;
+        vocab:hasSctLbl         "Bendroflumethiazide (procedure)"@en .
 
-:DrugTBendroflumethiazide
+data:DrugTBendroflumethiazide
         a           vocab:DrugType , owl:NamedIndividual ;
-        rdfs:label  "Bendroflumethiazide"@en .
+        rdfs:label  "Bendroflumethiazide"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#387520007> ;
+        vocab:hasSctLbl  "Bendroflumethiazide (substance)"@en . 
 
 [ a                    owl:AllDifferent ;
-  owl:distinctMembers  ( :ActAdministerAspirin :ActAdministerClopidogrel :ActAdministerDipyridamole :ActAdministerThiazide :ActAdministerTramadol :ActAdministerPPI :ActAdministerIbuprofen :ActAdministerInsulin :ActAdministerNSAID :ActEradicationTherapy )
+        owl:distinctMembers  ( data:ActAdministerAspirin data:ActAdministerClopidogrel data:ActAdministerDipyridamole data:ActAdministerThiazide data:ActAdministerTramadol data:ActAdministerPPI data:ActAdministerIbuprofen data:ActAdministerInsulin data:ActAdministerNSAID data:ActEradicationTherapy )
 ] .
 
 [ a                    owl:AllDifferent ;
-  owl:distinctMembers  ( :DrugTAspirin :DrugTClopidogrel :DrugTDipyridamole :DrugCatThiazide :DrugTTramadol :DrugCatPPI :DrugCatNSAID :DrugTIbuprofen :DrugTnsulin :DrugCatDiuretic :DrugCatAntiBacterialAgent :DrugCatPlateletAggregationInhibitor :DrugCatAnalgesic :DrugCatAntiHypertensiveAgent )
+        owl:distinctMembers  ( data:DrugTAspirin data:DrugTClopidogrel data:DrugTDipyridamole data:DrugCatThiazide data:DrugTTramadol data:DrugCatPPI data:DrugCatNSAID data:DrugTIbuprofen data:DrugTInsulin data:DrugCatDiuretic data:DrugCatAntiBacterialAgent data:DrugCatPlateletAggregationInhibitor data:DrugCatAnalgesic data:DrugCatAntiHypertensiveAgent )
 ] .
