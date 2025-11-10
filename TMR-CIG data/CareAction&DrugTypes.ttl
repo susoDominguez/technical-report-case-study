@@ -215,12 +215,49 @@ data:DrugTEpoprostenol
         vocab:hasSctId  <http://snomed.info/sct#372513003> ;
         vocab:hasSctLbl  "Epoprostenol (substance)"@en . 
 
+data:ActAdministerSimvastatin
+        a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
+        rdfs:label              "Administer lipid-lowering drug therapy with simvastatin 40 mg"@en ;
+        vocab:administrationOf  data:DrugTSimvastatin ;
+        vocab:hasSctId          <http://snomed.info/sct#42382311000001100> ;
+        vocab:hasSctLbl         "Product containing precisely simvastatin 40 milligram/1 each conventional release oral tablet (clinical drug)"@en .
+
+data:DrugTSimvastatin
+        a           vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label  "Simvastatin"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#387584000> ;
+        vocab:hasSctLbl  "Simvastatin (substance)"@en . 
 
 
-[ a                    owl:AllDifferent ;
-        owl:distinctMembers  ( data:ActAdministerAspirin data:ActAdministerClopidogrel data:ActAdministerDipyridamole data:ActAdministerThiazide data:ActAdministerTramadol data:ActAdministerPPI data:ActAdministerIbuprofen data:ActAdministerInsulin data:ActAdministerNSAID data:ActEradicationTherapy )
-] .
+data:DrugTPioglitazone  a     vocab:DrugType , owl:NamedIndividual ;
+                          rdfs:label    "pioglitazone (substance)"@en . 
+                          vocab:hasSctId  <http://snomed.info/sct#395828009> ;
+                          vocab:hasSctLbl  "pioglitazone (substance)"@en . 
 
-[ a                    owl:AllDifferent ;
-        owl:distinctMembers  ( data:DrugTAspirin data:DrugTClopidogrel data:DrugTDipyridamole data:DrugCatThiazide data:DrugTTramadol data:DrugCatPPI data:DrugCatNSAID data:DrugTIbuprofen data:DrugTInsulin data:DrugCatDiuretic data:DrugCatAntiBacterialAgent data:DrugCatPlateletAggregationInhibitor data:DrugCatAnalgesic data:DrugCatAntiHypertensiveAgent )
-] .
+data:DrugTMetformin  a     vocab:DrugType , owl:NamedIndividual ;
+                          rdfs:label    "metformin"@en ;
+                         vocab:hasSctId  <http://snomed.info/sct#372567009> ;
+                         vocab:hasSctLbl  "Metformin (substance)"@en .
+
+data:DrugTSulphonylureas  a     vocab:DrugType , owl:NamedIndividual ;
+                        rdfs:label    "sulphonylureas"@en ;
+#                        vocab:hasSctId  <http://snomed.info/sct#387481004> ;
+#                        vocab:hasSctLbl  "Sulfonylurea (substance)"@en .
+
+data:ActAdministerPioglitazone  rdf:type vocab:DrugAdministrationType;
+                            rdfs:label "Administer pioglitazone"@en ;
+                            vocab:administrationOf  :DrugTPioglitazone ;
+                            vocab:hasSctId  <http://snomed.info/sct#395828009> ;
+                            vocab:hasSctLbl  "pioglitazone (substance)"@en .
+
+data:ActAdministerMetformin  rdf:type vocab:DrugAdministrationType;
+                         rdfs:label "Administer metformin"@en ;
+                         vocab:administrationOf  :DrugTMetformin ;
+                                vocab:hasSctId  <http://snomed.info/sct#1340186004> ;
+                                vocab:hasSctLbl  "Metformin therapy (procedure)"@en .
+
+data:ActAdministerSulphonylureas  rdf:type vocab:DrugAdministrationType ;
+                            rdfs:label "Administer sulphonylureas"@en ;
+                            vocab:administrationOf  :DrugTSulphonylureas ;
+ #                           vocab:hasSctId  <http://snomed.info/sct#387481004> ;
+ #                           vocab:hasSctLbl  "sulphonylureas (substance)"@en .

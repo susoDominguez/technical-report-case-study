@@ -15,6 +15,20 @@
 @prefix vocab4i: <http://anonymous.org/vocab4i/> .
 @prefix tmr4i: <http://anonymous.org/vocab4i/> .
 
+data:SitIncreasedCardiovascularRisk  a         vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "At increased risk of cardiovascular disease"@en ;
+        vocab:stateOf   "at increased risk" ;
+        #vocab:umlsCode  "C1265810" ;
+        vocab:hasSctId  <http://snomed.info/sct#16434071000119108> ;
+        vocab:hasSctLbl "At increased risk of cardiovascular disease (finding)"@en .
+
+data:SitReducedCardiovascularRisk  a       vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "At reduced risk of cardiovascular disease"@en ;
+        vocab:stateOf   "at reduced risk" ;
+        #vocab:umlsCode  "C0041582" .
+        vocab:hasSctId  <http://snomed.info/sct#1255671001> ;
+        vocab:hasSctLbl "finding of decreased risk level"@en .
+
 data:SitDUHealed  a         vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Ulcer is healed"@en ;
         vocab:stateOf   "healed" ;
@@ -181,6 +195,18 @@ data:PropPain  a        owl:NamedIndividual , vocab:TropeType ;
         vocab:hasSctId  <http://snomed.info/sct#22253000> ;
         vocab:hasSctLbl "Pain (finding)"@en .   
 
+data:PropCVDRisk  a        owl:NamedIndividual , vocab:TropeType ;
+        rdfs:label  "risk of cardiovascular disease"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#827181004> ;
+        vocab:hasSctLbl "risk of cardiovascular disease (observable entity)"@en .   
+
+data:TrReducedCardiovascularRisk  a      owl:NamedIndividual , vocab:TransitionType ;
+        vocab:affects               data:PropCVDRisk ;
+        vocab:derivative            "decrease" ;
+        vocab:hasExpectedSituation  data:SitIncreasedCardiovascularRisk ;
+        vocab:hasTransformableSituation
+                data:SitReducedCardiovascularRisk .
+
 data:TrIncreaseRiskGIB  a               owl:NamedIndividual , vocab:TransitionType ;
         vocab:affects               data:PropRiskGIB ;
         vocab:derivative            "increase" ;
@@ -262,10 +288,118 @@ data:TrHealingUlcer  a                  owl:NamedIndividual , vocab:TransitionTy
 
 data:TrAntinflammatory  a  owl:NamedIndividual , vocab:TransitionType .
 
-[ a                    owl:AllDifferent ;
-        owl:distinctMembers  ( data:TrIncreaseRiskGIB data:TrDecreaseRiskGIB data:TrIncreaseBP data:TrDecreaseBP data:TrIncreaseLBS data:TrDecreaseLBS data:TrPainkiller data:TrDecreaseRiskThrombus data:TrIncreaseRiskThrombus data:TrHealingUlcer data:TrDecreaseBC )
-] .
+data:TrPiaglitazoneSideEffects rdf:type owl:NamedIndividual , vocab:TransitionType;
+                    vocab:affects               :PropHeartFailureRisk ;
+                    vocab:derivative            "increase" ;
+                    vocab:hasTransformableSituation :SitLowHeartFailureRisk ;
+                    vocab:hasExpectedSituation :SitHighHeartFailureRisk .
 
-[ a                    owl:AllDifferent ;
-        owl:distinctMembers  ( data:SitDUHealed data:SitDUUnhealed data:SitHPyloriNegative data:SitHPyloriPositive data:SitHighBP data:SitHighLBS data:SitHighRiskGIB data:SitHighRiskThrombus data:SitLowRiskGIB data:SitLowRiskThrombus data:SitMediumRiskThrombus data:SitNormalBP data:SitNormalLBS data:SitPatientHasNoPain data:SitPatientHasPain data:SitNormalBC data:SitLowBC )
-] .
+data:PropHeartFailureRisk  a       owl:NamedIndividual , vocab:TropeType ;
+                    rdfs:label  "risk of heart failure"@en .
+
+data:SitLowHeartFailureRisk rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "Heart failure risk is low"@en ;
+        vocab:stateOf   "low" ;
+        vocab:umlsCode  "null" .
+
+data:SitHighHeartFailureRisk rdf:type vocab:SituationType;
+        rdfs:label              "Heart failure risk is high"@en ;
+        vocab:stateOf   "high" ;
+        vocab:umlsCode  "null" .
+
+data:TrLowerHbA1c rdf:type owl:NamedIndividual , vocab:TransitionType;
+                    vocab:affects               data:PropHbA1c ;
+                    vocab:derivative            "decrease" ;
+                    vocab:hasTransformableSituation data:SitHighHbA1c ;
+                    vocab:hasExpectedSituation data:SitNormalHbA1c .
+
+data:PropHbA1c  a       owl:NamedIndividual , vocab:TropeType ;
+                                rdfs:label  "HbA1c level"@en .
+
+data:SitHighHbA1c rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "HbA1c is high"@en ;
+        vocab:stateOf   "high" ;
+        vocab:umlsCode  "null" .
+
+data:SitNormalHbA1c rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "HbA1c is normal"@en ;
+        vocab:stateOf   "normal" ;
+        vocab:umlsCode  "null" .
+
+data:TrMetforminIntolerance rdf:type owl:NamedIndividual , vocab:TransitionType;
+                    vocab:affects               data:PropMetforminSymptoms ;
+                    vocab:derivative            "increase" ;
+                    vocab:hasTransformableSituation data:SitMetforminSymptomsNotPresent ;
+                    vocab:hasExpectedSituation data:SitMetforminSymptomsPresent .
+
+data:PropMetforminSymptoms  a       owl:NamedIndividual , vocab:TropeType ;
+                                rdfs:label  "metformin symptoms"@en .
+
+data:SitMetforminSymptomsNotPresent rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "Metformin intolerance symptoms is not present"@en ;
+        vocab:stateOf   "not present" ;
+        vocab:umlsCode  "null" .
+
+data:SitMetforminSymptomsPresent rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "Metformin intolerance symptoms is present"@en ;
+        vocab:stateOf   "present" ;
+        vocab:umlsCode  "null" .
+
+data:TrSulphonylureasIntolerance rdf:type owl:NamedIndividual , vocab:TransitionType;
+                    vocab:affects               data:PropSulphonylureasSymptoms ;
+                    vocab:derivative            "increase" ;
+                    vocab:hasTransformableSituation data:SitSulphonylureasSymptomsNotPresent ;
+                    vocab:hasExpectedSituation data:SitSulphonylureasSymptomsPresent .
+
+data:PropSulphonylureas  a       owl:NamedIndividual , vocab:TropeType ;
+                                rdfs:label  "sulphonylureas symptoms"@en .
+
+data:SitSulphonylureasSymptomsNotPresent rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "Sulphonylureas intolerance symptoms is not present"@en ;
+        vocab:stateOf   "not present" ;
+        vocab:umlsCode  "null" .
+
+data:SitSulphonylureasSymptomsPresent rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "Sulphonylureas intolerance symptoms is present"@en ;
+        vocab:stateOf   "present" ;
+        vocab:umlsCode  "null" .
+
+data:TrIncreaseHypoglycaemia rdf:type owl:NamedIndividual , vocab:TransitionType;
+                    vocab:affects               data:PropHypoglycaemiaRate ;
+                    vocab:derivative            "increase" ;
+                    vocab:hasTransformableSituation data:SitNormalHypoglycaemiaRate ;
+                    vocab:hasExpectedSituation data:SitIncreasedHypoglycaemiaRate .
+
+data:PropHypoglycaemiaRate  a       owl:NamedIndividual , vocab:TropeType ;
+                                rdfs:label  "hypoglycaemia rate"@en .
+
+data:SitNormalHypoglycaemiaRate rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "Hypoglycaemia rate is normal"@en ;
+        vocab:stateOf   "normal" ;
+        vocab:umlsCode  "null" .
+
+data:SitIncreasedHypoglycaemiaRate rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "Hypoglycaemia rate is high"@en ;
+        vocab:stateOf   "high" ;
+        vocab:umlsCode  "null" .
+
+data:TrIncreaseWeight rdf:type owl:NamedIndividual , vocab:TransitionType;
+                    vocab:affects               data:PropWeightGain ;
+                    vocab:derivative            "increase" ;
+                    vocab:hasTransformableSituation data:SitNormalWeightGain ;
+                    vocab:hasExpectedSituation data:SitHighWeightGain .
+
+data:PropWeightGain  a       owl:NamedIndividual , vocab:TropeType ;
+                                rdfs:label  "weight gain"@en .
+
+data:SitNormalWeightGain rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "Weight gain is normal"@en ;
+        vocab:stateOf   "normal" ;
+        vocab:umlsCode  "null" .
+
+data:SitHighWeightGain rdf:type owl:NamedIndividual , vocab:SituationType;
+        rdfs:label              "Weight gain is high"@en ;
+        vocab:stateOf   "high" ;
+        vocab:umlsCode  "null" .
+
+
