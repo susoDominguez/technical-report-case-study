@@ -202,6 +202,21 @@ data:DrugTBendroflumethiazide
         vocab:hasSctId  <http://snomed.info/sct#387520007> ;
         vocab:hasSctLbl  "Bendroflumethiazide (substance)"@en . 
 
+data:ActAdministerEpoprostenol
+        a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
+        rdfs:label              "Administer Epoprostenol"@en ;
+        vocab:administrationOf  data:DrugTEpoprostenol ;
+        vocab:hasSctId          <http://snomed.info/sct#372513003> ;
+        vocab:hasSctLbl         "Epoprostenol (procedure)"@en .
+
+data:DrugTEpoprostenol
+        a           vocab:DrugType , owl:NamedIndividual ;
+        rdfs:label  "Epoprostenol"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#372513003> ;
+        vocab:hasSctLbl  "Epoprostenol (substance)"@en . 
+
+
+
 [ a                    owl:AllDifferent ;
         owl:distinctMembers  ( data:ActAdministerAspirin data:ActAdministerClopidogrel data:ActAdministerDipyridamole data:ActAdministerThiazide data:ActAdministerTramadol data:ActAdministerPPI data:ActAdministerIbuprofen data:ActAdministerInsulin data:ActAdministerNSAID data:ActEradicationTherapy )
 ] .
