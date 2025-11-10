@@ -1,4 +1,3 @@
-@prefix :      <http://anonymous.org/data/> .
 @prefix data:      <http://anonymous.org/data/> .
 @prefix np:    <http://www.nanopub.org/nschema#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
@@ -13,262 +12,260 @@
 @prefix tmr: <http://anonymous.org/vocab/> .
 @prefix nanopub: <http://www.nanopub.org/nschema#> .
 @prefix prov:  <http://www.w3.org/ns/prov#> .
-@prefix vocab: <http://anonymous.org/vocab/> .
 @prefix vocab4i: <http://anonymous.org/vocab4i/> .
 @prefix tmr4i: <http://anonymous.org/vocab4i/> .
 
-:SitDUHealed  a         vocab:SituationType , owl:NamedIndividual ;
+data:SitDUHealed  a         vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Ulcer is healed"@en ;
         vocab:stateOf   "healed" ;
         vocab:umlsCode  "C1265810" ;
         vocab:hasSctId  <http://snomed.info/sct#235702004> ;
         vocab:hasSctLbl "Healed gastric ulcer (disorder)"@en .
 
-:SitDUUnhealed  a       vocab:SituationType , owl:NamedIndividual ;
+data:SitDUUnhealed  a       vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Ulcer is unhealed"@en ;
         vocab:stateOf   "unhealed" ;
-        vocab:umlsCode  "C0041582" ;
+        vocab:umlsCode  "C0041582" .
 #       vocab:hasSctId  <http://snomed.info/sct#271327008> ;
 #       vocab:hasSctLbl "Duodenal ulcer (disorder)"@en .
 
-:SitHPyloriNegative  a  vocab:SituationType , owl:NamedIndividual ;
+data:SitHPyloriNegative  a  vocab:SituationType , owl:NamedIndividual ;
         rdfs:label     "H. Pylori exam is negative"@en ;
         vocab:stateOf  "negative" ;
         vocab:umlsCode "C0026269" ;
         vocab:hasSctId  <http://snomed.info/sct#401041004> ;            
         vocab:hasSctLbl "Helicobacter pylori not seen on microscopy (finding)"@en .
 
-:SitHPyloriPositive  a  vocab:SituationType , owl:NamedIndividual ;
+data:SitHPyloriPositive  a  vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "H. Pylori exam is positive"@en ;
         vocab:stateOf   "positive" ;
         vocab:umlsCode  "C0079488" ;
         vocab:hasSctId  <http://snomed.info/sct#513161000000105> ;            
         vocab:hasSctLbl "Helicobacter pylori test positive (finding)"@en .
 
-:SitHighBP  a           vocab:SituationType , owl:NamedIndividual ;
+data:SitHighBP  a           vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Blood pressure is high"@en ;
         vocab:stateOf   "high" ;
         vocab:umlsCode  "C3843080" ;
         vocab:hasSctId  <http://snomed.info/sct#38341003> ;
         vocab:hasSctLbl "Hypertensive disorder, systemic arterial (disorder)"@en .
 
-:SitNormalBP  a        vocab:SituationType , owl:NamedIndividual ;
+data:SitNormalBP  a        vocab:SituationType , owl:NamedIndividual ;
         rdfs:label     "Blood pressure is normal"@en ;
         vocab:stateOf  "normal" ;
         vocab:umlsCode "C0005823" ;
         vocab:hasSctId  <http://snomed.info/sct#2004005> ;
         vocab:hasSctLbl "Blood pressure within reference range (finding)"@en .
 
-:SitHighLBS  a          vocab:SituationType , owl:NamedIndividual ;
+data:SitHighLBS  a          vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Level of Blood Sugar is High"@en ;
         vocab:stateOf   "high" ;
         vocab:umlsCode  "C3843079" ;
         vocab:hasSctId  <http://snomed.info/sct#444780001> ;
         vocab:hasSctLbl "Glucose in blood specimen above reference range (finding)"@en .
 
-:SitNormalLBS  a       vocab:SituationType , owl:NamedIndividual ;
+data:SitNormalLBS  a       vocab:SituationType , owl:NamedIndividual ;
         rdfs:label     "Level of Blood Sugar is normal"@en ;
         vocab:stateOf  "normal" ;
         vocab:umlsCode "C0020456" ;
         vocab:hasSctId  <http://snomed.info/sct#166921001> ;
         vocab:hasSctLbl " Blood glucose within reference range (finding)"@en .
 
-:SitHighRiskGIB  a      vocab:SituationType , owl:NamedIndividual ;
+data:SitHighRiskGIB  a      vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Risk of Gastrointestinal Bleeding is High"@en ;
         vocab:stateOf   "high" ;
         vocab:umlsCode  "C0017181" ;
         vocab:hasSctId  <http://snomed.info/sct#27719009> ;
         vocab:hasSctLbl "Acute gastrointestinal hemorrhage (disorder)"@en .
 
-:SitLowRiskGIB  a      vocab:SituationType , owl:NamedIndividual ;
+data:SitLowRiskGIB  a      vocab:SituationType , owl:NamedIndividual ;
         rdfs:label     "Risk of Gastrointestinal Bleeding is low"@en ;
         vocab:stateOf  "low" ;
-        vocab:umlsCode "C0017181" ;
+        vocab:umlsCode "C0017181" .
 #        vocab:hasSctId  <http://snomed.info/sct#271327008> ;
 #        vocab:hasSctLbl "Low risk of gastrointestinal bleeding (finding)"@en .
 
-:SitHighRiskThrombus  a  vocab:SituationType , owl:NamedIndividual ;
+data:SitHighRiskThrombus  a  vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Risk of Thrombus is High"@en ;
         vocab:stateOf   "high" ;
         vocab:umlsCode  "C0155749" ;
         vocab:hasSctId  <http://snomed.info/sct#433144002> ;
         vocab:hasSctLbl "High risk of thrombosis (finding)"@en .
 
-:SitLowRiskThrombus  a  vocab:SituationType , owl:NamedIndividual ;
+data:SitLowRiskThrombus  a  vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Risk of Thrombus is Low"@en ;
         vocab:stateOf   "low" ;
-        vocab:umlsCode  "null" ;
+        vocab:umlsCode  "null" .
 #        vocab:hasSctId  <http://snomed.info/sct#271327008> ;
 #        vocab:hasSctLbl "Low risk of thrombosis (finding)"@en .
 
-:SitMediumRiskThrombus
-        a               vocab:SituationType , owl:NamedIndividual ;
+data:SitMediumRiskThrombus a               vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Risk of Thrombus is Medium"@en ;
         vocab:stateOf   "medium" ;
-        vocab:umlsCode  "C0155749" ;
+        vocab:umlsCode  "C0155749" .
 #        vocab:hasSctId  <http://snomed.info/sct#271327008> ;
 #        vocab:hasSctLbl "Medium risk of thrombosis (finding)"@en .
 
-:SitNormalBC  a        vocab:SituationType , owl:NamedIndividual ;
+data:SitNormalBC  a        vocab:SituationType , owl:NamedIndividual ;
         rdfs:label     "Blood Coagulation is Normal"@en ;
         vocab:stateOf  "normal" ;
-        vocab:umlsCode "C0005779" ;
+        vocab:umlsCode "C0005779" .
 #        vocab:hasSctId  <http://snomed.info/sct#271327008> ;
 #        vocab:hasSctLbl "Normal blood coagulation (finding)"@en .
 
-:SitLowBC  a            vocab:SituationType , owl:NamedIndividual ;
+data:SitLowBC  a            vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Blood Coagulation is Low"@en ;
         vocab:stateOf   "low" ;
-        vocab:umlsCode  "C0005779" ;
+        vocab:umlsCode  "C0005779" .
 #        vocab:hasSctId  <http://snomed.info/sct#271327008> ;
 #        vocab:hasSctLbl "Low blood coagulation (finding)"@en .
 
-:SitPatientHasNoPain  a  vocab:SituationType , owl:NamedIndividual ;
+data:SitPatientHasNoPain  a  vocab:SituationType , owl:NamedIndividual ;
         rdfs:label     "Patient has no Pain"@en ;
         vocab:stateOf  "no pain" ;
         vocab:umlsCode "C0030193" ;
         vocab:hasSctId  <http://snomed.info/sct#255350008> ;
         vocab:hasSctLbl "Painless (finding)"@en .
 
-:SitPatientHasPain  a   vocab:SituationType , owl:NamedIndividual ;
+data:SitPatientHasPain  a   vocab:SituationType , owl:NamedIndividual ;
         rdfs:label      "Patient has Pain"@en ;
         vocab:stateOf   "pain" ;
         vocab:umlsCode  "C0030193" ;
         vocab:hasSctId  <http://snomed.info/sct#1144586002> ;
         vocab:hasSctLbl "Increased pain (finding)"@en .
 
-:SitNonSteroidalDrug  a  vocab:SituationType , owl:NamedIndividual ;
+data:SitNonSteroidalDrug  a  vocab:SituationType , owl:NamedIndividual ;
         rdfs:label     "Drug Type is non steroidal"@en ;
         vocab:stateOf  "non steroidal" ;
         vocab:umlsCode "C0026895" ;
         vocab:hasSctId  <http://snomed.info/sct#372687004> ;
         vocab:hasSctLbl "Non-steroidal anti-inflammatory drug (substance)"@en .
 
-:PropUlcer  a       owl:NamedIndividual , vocab:TropeType ;
+data:PropUlcer  a       owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "state of ulcer"@en ;
         vocab:hasSctId  <http://snomed.info/sct#271327008> ;
         vocab:hasSctLbl "Duodenal ulcer (disorder)"@en .
 
-:PropHPylori  a     owl:NamedIndividual , vocab:TropeType ;
+data:PropHPylori  a     owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "H. Pylori exam"@en ;
         vocab:hasSctId  <http://snomed.info/sct#235719002> ;
         vocab:hasSctLbl "Helicobacter pylori (organism)"@en .
 
-:PropBP  a          owl:NamedIndividual , vocab:TropeType ;
+data:PropBP  a          owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "Blood pressure"@en ;
         vocab:hasSctId  <http://snomed.info/sct#75367002> ;
         vocab:hasSctLbl "Blood pressure (finding)"@en .
 
-:PropLBS  a         owl:NamedIndividual , vocab:TropeType ;
+data:PropLBS  a         owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "Level of blood sugar"@en ;
         vocab:hasSctId  <http://snomed.info/sct#997671000000106> ;
         vocab:hasSctLbl "Blood glucose level (observable entity)"@en .
 
-:PropRiskGIB  a     owl:NamedIndividual , vocab:TropeType ;
+data:PropRiskGIB  a     owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "risk of gastrointestinal bleeding"@en ;
         vocab:hasSctId  <http://snomed.info/sct#74474003> ;
         vocab:hasSctLbl "Gastrointestinal hemorrhage (disorder)"@en .
 
-:PropRiskThrombus  a  owl:NamedIndividual , vocab:TropeType ;
+data:PropRiskThrombus  a  owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "risk of Thrombus"@en ;
         vocab:hasSctId  <http://snomed.info/sct#1264290008> ;
         vocab:hasSctLbl "Presence of thrombus in renal vein (observable entity)"@en .
 
-:PropBC  a          owl:NamedIndividual , vocab:TropeType ;
+data:PropBC  a          owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "blood coagulation"@en ;
         vocab:hasSctId  <http://snomed.info/sct#404995006> ;
         vocab:hasSctLbl "Blood coagulation status (observable entity)"@en .
 
-:PropPain  a        owl:NamedIndividual , vocab:TropeType ;
+data:PropPain  a        owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "pain"@en ;
         vocab:hasSctId  <http://snomed.info/sct#22253000> ;
         vocab:hasSctLbl "Pain (finding)"@en .   
 
-:TrIncreaseRiskGIB  a               owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropRiskGIB ;
+data:TrIncreaseRiskGIB  a               owl:NamedIndividual , vocab:TransitionType ;
+        vocab:affects               data:PropRiskGIB ;
         vocab:derivative            "increase" ;
-        vocab:hasExpectedSituation  :SitHighRiskGIB ;
+        vocab:hasExpectedSituation  data:SitHighRiskGIB ;
         vocab:hasTransformableSituation
-                :SitLowRiskGIB .
+                data:SitLowRiskGIB .
 
-:TrDecreaseRiskGIB  a               owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropRiskGIB ;
+data:TrDecreaseRiskGIB  a               owl:NamedIndividual , vocab:TransitionType ;
+        vocab:affects               data:PropRiskGIB ;
         vocab:derivative            "decrease" ;
-        vocab:hasExpectedSituation  :SitLowRiskGIB ;
+        vocab:hasExpectedSituation  data:SitLowRiskGIB ;
         vocab:hasTransformableSituation
-                :SitHighRiskGIB .
+                data:SitHighRiskGIB .
 
-:TrDecreaseBC  a                    owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropBC ;
+data:TrDecreaseBC  a                    owl:NamedIndividual , vocab:TransitionType ;
+        vocab:affects               data:PropBC ;
         vocab:derivative            "decrease" ;
-        vocab:hasExpectedSituation  :SitLowBC ;
+        vocab:hasExpectedSituation  data:SitLowBC ;
         vocab:hasTransformableSituation
-                :SitNormalBC .
+                data:SitNormalBC .
 
-:TrDecreaseBP  a                    owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropBP ;
+data:TrDecreaseBP  a                    owl:NamedIndividual , vocab:TransitionType ;
+        vocab:affects               data:PropBP ;
         vocab:derivative            "decrease" ;
-        vocab:hasExpectedSituation  :SitNormalBP ;
+        vocab:hasExpectedSituation  data:SitNormalBP ;
         vocab:hasTransformableSituation
-                :SitHighBP .
+                data:SitHighBP .
 
-:TrIncreaseBP  a                    owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropBP ;
+data:TrIncreaseBP  a                    owl:NamedIndividual , vocab:TransitionType ;
+        vocab:affects               data:PropBP ;
         vocab:derivative            "increase" ;
-        vocab:hasExpectedSituation  :SitHighBP ;
+        vocab:hasExpectedSituation  data:SitHighBP ;
         vocab:hasTransformableSituation
-                :SitNormalBP .
+                data:SitNormalBP .
 
-:TrIncreaseLBS  a                   owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropLBS ;
+data:TrIncreaseLBS  a                   owl:NamedIndividual , vocab:TransitionType ;
+        vocab:affects               data:PropLBS ;
         vocab:derivative            "increase" ;
-        vocab:hasExpectedSituation  :SitNormalLBS ;
+        vocab:hasExpectedSituation  data:SitNormalLBS ;
         vocab:hasTransformableSituation
-                :SitHighLBS .
+                data:SitHighLBS .
 
-:TrDecreaseLBS  a                   owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropLBS ;
+data:TrDecreaseLBS  a                   owl:NamedIndividual , vocab:TransitionType ;
+        vocab:affects               data:PropLBS ;
         vocab:derivative            "decrease" ;
-        vocab:hasExpectedSituation  :SitNormalLBS ;
+        vocab:hasExpectedSituation  data:SitNormalLBS ;
         vocab:hasTransformableSituation
-                :SitHighLBS .
+                data:SitHighLBS .
 
-:TrPainkiller  a                    owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropPain ;
+data:TrPainkiller  a                    owl:NamedIndividual , vocab:TransitionType ;
+        vocab:affects               data:PropPain ;
         vocab:derivative            "decrease" ;
-        vocab:hasExpectedSituation  :SitPatientHasNoPain ;
+        vocab:hasExpectedSituation  data:SitPatientHasNoPain ;
         vocab:hasTransformableSituation
-                :SitPatientHasPain .
+                data:SitPatientHasPain .
 
-:TrDecreaseRiskThrombus
+data:TrDecreaseRiskThrombus
         a                           owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropRiskThrombus ;
+        vocab:affects               data:PropRiskThrombus ;
         vocab:derivative            "decrease" ;
-        vocab:hasExpectedSituation  :SitLowRiskThrombus ;
+        vocab:hasExpectedSituation  data:SitLowRiskThrombus ;
         vocab:hasTransformableSituation
-                :SitMediumRiskThrombus .
+                data:SitMediumRiskThrombus .
 
-:TrIncreaseRiskThrombus
+data:TrIncreaseRiskThrombus
         a                           owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropRiskThrombus ;
+        vocab:affects               data:PropRiskThrombus ;
         vocab:derivative            "increase" ;
-        vocab:hasExpectedSituation  :SitMediumRiskThrombus ;
+        vocab:hasExpectedSituation  data:SitMediumRiskThrombus ;
         vocab:hasTransformableSituation
-                :SitLowRiskThrombus .
+                data:SitLowRiskThrombus .
 
-:TrHealingUlcer  a                  owl:NamedIndividual , vocab:TransitionType ;
-        vocab:affects               :PropUlcer ;
+data:TrHealingUlcer  a                  owl:NamedIndividual , vocab:TransitionType ;
+        vocab:affects               data:PropUlcer ;
         vocab:derivative            "increase" ;
-        vocab:hasExpectedSituation  :SitDUHealed ;
+        vocab:hasExpectedSituation  data:SitDUHealed ;
         vocab:hasTransformableSituation
-                :SitDUUnhealed .
+                data:SitDUUnhealed .
 
-:TrAntinflammatory  a  owl:NamedIndividual , vocab:TransitionType .
+data:TrAntinflammatory  a  owl:NamedIndividual , vocab:TransitionType .
 
 [ a                    owl:AllDifferent ;
-  owl:distinctMembers  ( :TrIncreaseRiskGIB :TrDecreaseRiskGIB :TrIncreaseBP :TrDecreaseBP :TrIncreaseLBS :TrDecreaseLBS :TrPainkiller :TrDecreaseRiskThrombus :TrIncreaseRiskThrombus :TrHealingUlcer :TrDecreaseBC )
+        owl:distinctMembers  ( data:TrIncreaseRiskGIB data:TrDecreaseRiskGIB data:TrIncreaseBP data:TrDecreaseBP data:TrIncreaseLBS data:TrDecreaseLBS data:TrPainkiller data:TrDecreaseRiskThrombus data:TrIncreaseRiskThrombus data:TrHealingUlcer data:TrDecreaseBC )
 ] .
 
 [ a                    owl:AllDifferent ;
-  owl:distinctMembers  ( :SitDUHealed :SitDUUnhealed :SitHPyloriNegative :SitHPyloriPositive :SitHighBP :SitHighLBS :SitHighRiskGIB :SitHighRiskThrombus :SitLowRiskGIB :SitLowRiskThrombus :SitMediumRiskThrombus :SitNormalBP :SitNormalLBS :SitPatientHasNoPain :SitPatientHasPain :SitNormalBC :SitLowBC )
+        owl:distinctMembers  ( data:SitDUHealed data:SitDUUnhealed data:SitHPyloriNegative data:SitHPyloriPositive data:SitHighBP data:SitHighLBS data:SitHighRiskGIB data:SitHighRiskThrombus data:SitLowRiskGIB data:SitLowRiskThrombus data:SitMediumRiskThrombus data:SitNormalBP data:SitNormalLBS data:SitPatientHasNoPain data:SitPatientHasPain data:SitNormalBC data:SitLowBC )
 ] .
