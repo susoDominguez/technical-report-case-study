@@ -179,7 +179,7 @@ data:ActAdministerThiazide
         a                       owl:NamedIndividual , vocab:DrugAdministrationType ;
         rdfs:label              "administer Thiazide diuretic"@en ;
         vocab:administrationOf  data:DrugCatThiazide ;
-        vocab:subsumes          data:ActAdministerBendroflumethiazide .
+        vocab:subsumes          data:ActAdministerBendroflumethiazide ;
         vocab:hasSctId          <http://snomed.info/sct#860766002> ;
         vocab:hasSctLbl         "Thiazide diuretic (substance)"@en .
 
