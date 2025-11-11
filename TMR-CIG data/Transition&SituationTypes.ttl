@@ -289,10 +289,10 @@ data:TrHealingUlcer  a                  owl:NamedIndividual , vocab:TransitionTy
 data:TrAntinflammatory  a  owl:NamedIndividual , vocab:TransitionType .
 
 data:TrPiaglitazoneSideEffects rdf:type owl:NamedIndividual , vocab:TransitionType;
-                    vocab:affects               :PropHeartFailureRisk ;
+                    vocab:affects               data:PropHeartFailureRisk ;
                     vocab:derivative            "increase" ;
-                    vocab:hasTransformableSituation :SitLowHeartFailureRisk ;
-                    vocab:hasExpectedSituation :SitHighHeartFailureRisk .
+                    vocab:hasTransformableSituation data:SitLowHeartFailureRisk ;
+                    vocab:hasExpectedSituation data:SitHighHeartFailureRisk .
 
 data:PropHeartFailureRisk  a       owl:NamedIndividual , vocab:TropeType ;
                     rdfs:label  "risk of heart failure"@en .

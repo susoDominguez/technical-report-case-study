@@ -1,4 +1,3 @@
-@prefix :      <http://anonymous.org/data/> .
 @prefix data:      <http://anonymous.org/data/> .
 @prefix np:    <http://www.nanopub.org/nschema#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
@@ -9,11 +8,10 @@
 @prefix oa:    <http://www.w3.org/ns/oa#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml:   <http://www.w3.org/XML/1998/namespace> .
-@prefix vocab: <http://anonymous.org/vocab/> .
 @prefix tmr: <http://anonymous.org/vocab/> .
+@prefix vocab: <http://anonymous.org/vocab/> .
 @prefix nanopub: <http://www.nanopub.org/nschema#> .
 @prefix prov:  <http://www.w3.org/ns/prov#> .
-@prefix vocab: <http://anonymous.org/vocab/> .
 @prefix vocab4i: <http://anonymous.org/vocab4i/> .
 @prefix tmr4i: <http://anonymous.org/vocab4i/> .
 
@@ -226,38 +224,40 @@ data:DrugTSimvastatin
         a           vocab:DrugType , owl:NamedIndividual ;
         rdfs:label  "Simvastatin"@en ;
         vocab:hasSctId  <http://snomed.info/sct#387584000> ;
-        vocab:hasSctLbl  "Simvastatin (substance)"@en . 
+        vocab:hasSctLbl  "Simvastatin (substance)"@en .  
 
 
 data:DrugTPioglitazone  a     vocab:DrugType , owl:NamedIndividual ;
-                          rdfs:label    "pioglitazone (substance)"@en . 
-                          vocab:hasSctId  <http://snomed.info/sct#395828009> ;
-                          vocab:hasSctLbl  "pioglitazone (substance)"@en . 
+        rdfs:label    "pioglitazone (substance)"@en ;
+        vocab:hasSctId  <http://snomed.info/sct#395828009> ;
+        vocab:hasSctLbl  "pioglitazone (substance)"@en . 
 
 data:DrugTMetformin  a     vocab:DrugType , owl:NamedIndividual ;
                           rdfs:label    "metformin"@en ;
                          vocab:hasSctId  <http://snomed.info/sct#372567009> ;
                          vocab:hasSctLbl  "Metformin (substance)"@en .
 
+# data:DrugTSulphonylureas  a     vocab:DrugType , owl:NamedIndividual ;
+#                        rdfs:label    "sulphonylureas"@en ;
 data:DrugTSulphonylureas  a     vocab:DrugType , owl:NamedIndividual ;
-                        rdfs:label    "sulphonylureas"@en ;
+                        rdfs:label    "sulphonylureas"@en .
 #                        vocab:hasSctId  <http://snomed.info/sct#387481004> ;
 #                        vocab:hasSctLbl  "Sulfonylurea (substance)"@en .
 
 data:ActAdministerPioglitazone  rdf:type vocab:DrugAdministrationType;
-                            rdfs:label "Administer pioglitazone"@en ;
-                            vocab:administrationOf  :DrugTPioglitazone ;
-                            vocab:hasSctId  <http://snomed.info/sct#395828009> ;
-                            vocab:hasSctLbl  "pioglitazone (substance)"@en .
+        rdfs:label "Administer pioglitazone"@en ;
+        vocab:administrationOf  data:DrugTPioglitazone ;
+        vocab:hasSctId  <http://snomed.info/sct#395828009> ;
+        vocab:hasSctLbl  "pioglitazone (substance)"@en .
 
 data:ActAdministerMetformin  rdf:type vocab:DrugAdministrationType;
-                         rdfs:label "Administer metformin"@en ;
-                         vocab:administrationOf  :DrugTMetformin ;
-                                vocab:hasSctId  <http://snomed.info/sct#1340186004> ;
-                                vocab:hasSctLbl  "Metformin therapy (procedure)"@en .
+        rdfs:label "Administer metformin"@en ;
+        vocab:administrationOf  data:DrugTMetformin ;
+        vocab:hasSctId  <http://snomed.info/sct#1340186004> ;
+        vocab:hasSctLbl  "Metformin therapy (procedure)"@en .
 
 data:ActAdministerSulphonylureas  rdf:type vocab:DrugAdministrationType ;
-                            rdfs:label "Administer sulphonylureas"@en ;
-                            vocab:administrationOf  :DrugTSulphonylureas ;
- #                           vocab:hasSctId  <http://snomed.info/sct#387481004> ;
- #                           vocab:hasSctLbl  "sulphonylureas (substance)"@en .
+        rdfs:label "Administer sulphonylureas"@en ;
+        vocab:administrationOf  data:DrugTSulphonylureas .
+        # vocab:hasSctId  <http://snomed.info/sct#387481004> ;
+        # vocab:hasSctLbl  "sulphonylureas (substance)"@en .

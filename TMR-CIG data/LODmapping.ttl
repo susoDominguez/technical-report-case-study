@@ -1,4 +1,4 @@
-@prefix : <http://anonymous.org/data/> .
+@prefix data: <http://anonymous.org/data/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -17,7 +17,7 @@
 # Linking drugbank drugs and categories with tmr drug types
 ##########
 
-:DrugTAspirin       owl:sameAs           drug:DB00945 ;
+data:DrugTAspirin       owl:sameAs           drug:DB00945 ;
                     owl:sameAs           dbpedia:Aspirin;
                     vocab:pubchemCID       "2244"^^xsd:string ;
                     #vocab:pubchemURL      <http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=2244>
@@ -25,78 +25,78 @@
                     #vocab:hasATCCode      "B01AC04"^^xsd:string ; ????????
 
 
-:DrugTClopidogrel   owl:sameAs           drug:DB00758 ;
+data:DrugTClopidogrel   owl:sameAs           drug:DB00758 ;
                     owl:sameAs           dbpedia:Clopidogrel;
                     vocab:pubchemCID       "60606"^^xsd:string ;
                     #vocab:pubchemURL      <http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=60606>
                     vocab:umlsCode      "C0070166"^^xsd:string .
                     #vocab:hasATCCode      "B01AC04"^^xsd:string .
 
-:DrugTDipyridamole  owl:sameAs           drug:DB00975 ;
+data:DrugTDipyridamole  owl:sameAs           drug:DB00975 ;
                     owl:sameAs           dbpedia:Dipyridamole ;
                     vocab:pubchemCID       "3108"^^xsd:string ;
                     #vocab:pubchemURL      <http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=3108>
                     vocab:umlsCode      "C0012582"^^xsd:string .
 
-:DrugTTramadol      owl:sameAs           drug:DB00193 ;
+data:DrugTTramadol      owl:sameAs           drug:DB00193 ;
                     owl:sameAs           dbpedia:Tramadol ;
                     vocab:pubchemCID       "33741"^^xsd:string ;
                     vocab:umlsCode      "C0040610"^^xsd:string .
 
-:DrugTIbuprofen     owl:sameAs           drug:DB01050 ;
+data:DrugTIbuprofen     owl:sameAs           drug:DB01050 ;
                     owl:sameAs           dbpedia:Ibuprofen ;
                     vocab:pubchemCID       "3672"^^xsd:string ;
                     vocab:umlsCode      "C0020740"^^xsd:string .
 
-:DrugTEpoprostenol     owl:sameAs           drug:DB01240 .
+data:DrugTEpoprostenol     owl:sameAs           drug:DB01240 .
 
-:DrugTBendroflumethiazide   owl:sameAs           drug:DB00436 .
+data:DrugTBendroflumethiazide   owl:sameAs           drug:DB00436 .
 
 # According to Turtle 1.1 grammar, comma's are not allowed to occur
 # in PL_LOCAL productions.
 # I have added a backslash escape sequence here. (Wouter)
-:DrugCatThiazide    owl:sameAs           drugcategory:diuretics\,Thiazide ;
+data:DrugCatThiazide    owl:sameAs           drugcategory:diuretics\,Thiazide ;
                     owl:sameAs           drugcategory:Diuretics;
                     owl:sameAs           dbpedia:Thiazide ;
                     vocab:UMLSCode         "C0541746"^^xsd:string ;
                     vocab:umlsCode        "99222756"^^xsd:string .
 
-:DrugCatPPI         owl:sameAs           drugcategory:proton-pumpInhibitors ;
+data:DrugCatPPI         owl:sameAs           drugcategory:proton-pumpInhibitors ;
                     owl:sameAs           drugcategory:Proton-Pump-Inhibitors ;
                     owl:sameAs           dbpedia:Proton-pump_inhibitor ;
                     vocab:umlsCode         "C0358591"^^xsd:string .
-                    #vocab:pubchemSID        "???"^^xsd:string .
+                    #vocab:pubchemSID        "???:"^^xsd:string .
                     #vocab:atcCode          "A02BC"^^xsd:string ;
                     #vocab:meshCode         "D054328"^^xsd:string .
 
 
-:DrugCatAntiBacterialAgent  owl:sameAs     drugcategory:anti-bacterialAgents ;
+data:DrugCatAntiBacterialAgent  owl:sameAs     drugcategory:anti-bacterialAgents ;
                             owl:sameAs     drugcategory:Anti-Bacterial-Agents ;
                             owl:sameAs     dbpedia:Bactericide ;
                             vocab:umlsCode         "C0004635"^^xsd:string ;
                             vocab:pubchemSID        "81065603"^^xsd:string .
 
 
-:DrugCatPlateletAggregationInhibitor  owl:sameAs     drugcategory:PlateletAggregationInhibitors ;
+data:DrugCatPlateletAggregationInhibitor  owl:sameAs     drugcategory:PlateletAggregationInhibitors ;
                             owl:sameAs              drugcategory:Platelet-Aggregation-Inhibitors ;
                             owl:sameAs           dbpedia:Antiplatelet_drug ;
                             vocab:umlsCode         "C0032177"^^xsd:string ;
                             vocab:pubchemSID        "134222865"^^xsd:string .
 
 
-:DrugCatAnalgesic           owl:sameAs      drugcategory:analgesics ;
+data:DrugCatAnalgesic           owl:sameAs      drugcategory:analgesics ;
                             owl:sameAs      drugcategory:Analgesics ;
                             owl:sameAs      dbpedia:Analgesic ;
                             vocab:umlsCode    "C0002771"^^xsd:string ;
                             vocab:pubchemSID   "131269065"^^xsd:string .
 
 
-:DrugCatAntiHypertensiveAgent owl:sameAs     drugcategory:antihypertensiveAgents ;
+data:DrugCatAntiHypertensiveAgent owl:sameAs     drugcategory:antihypertensiveAgents ;
                             owl:sameAs     drugcategory:Antihypertensive-Agents ;
                             owl:sameAs      dbpedia:Antihypertensive_drug ;
                             vocab:umlsCode    "C0003364"^^xsd:string ;
                             vocab:pubchemSID   "81065608"^^xsd:string .
 
-:DrugCatNSAID               owl:sameAs      drugcategory:anti-inflammatoryAgents\,Non-steroidal ;
+data:DrugCatNSAID               owl:sameAs      drugcategory:anti-inflammatoryAgents\,Non-steroidal ;
                             owl:sameAs      drugcategory:Anti-InflammatoryAgents\,Non-Steroidal.
 
