@@ -19,58 +19,68 @@ data:CIG-DB-assess
         rdfs:label "CIG for Diabetes Mellitus"@en .
 
 ## Subguidelines
-data:RecDB-Thiazolidinediones1
-        vocab:isPartOf  data:CIG-DB-assess, data:subCIG-Metmorfin.
 
 data:subCIG-Metmorfin  a    owl:NamedIndividual , vocab:subGuideline ;
         rdfs:label              "treatment pathway for patients with DM2 and overweight"@en ;
         vocab:isSubGuidelineOf  data:CIG-DB-assess .
 
+data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
+        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
+        vocab:isSubGuidelineOf  data:CIG-DB-assess .
+
+data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
+        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
+        vocab:isSubGuidelineOf  data:CIG-DB-assess .
+
+data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
+        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
+        vocab:isSubGuidelineOf  data:CIG-DB-assess .
+
+data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
+        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
+        vocab:isSubGuidelineOf  data:CIG-DB-assess .
+
+data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
+        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
+        vocab:isSubGuidelineOf  data:CIG-DB-assess .
+
+data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
+        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
+        vocab:isSubGuidelineOf  data:CIG-DB-assess .
+
+data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
+        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
+        vocab:isSubGuidelineOf  data:CIG-DB-assess .
+
+data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
+        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
+        vocab:isSubGuidelineOf  data:CIG-DB-assess .
+
+## Recommendations in each subguideline
+
+data:RecDM-Thiazolidinediones5  vocab:isPartOf  data:CIG-DB-assess .
+
+data:RecDB-Thiazolidinediones1
+        vocab:isPartOf  data:CIG-DB-assess, data:subCIG-Metmorfin.
+
 data:RecDB-Thiazolidinediones2
         vocab:isPartOf  data:CIG-DB-assess, data:subCIG-Sulphonylureas1 .
 
-data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
-        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
-        vocab:isSubGuidelineOf  data:CIG-DB-assess .
-
 data:RecDM-Thiazolidinediones3a  vocab:isPartOf  data:CIG-DB-assess .
-
-data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
-        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
-        vocab:isSubGuidelineOf  data:CIG-DB-assess .
 
 data:RecDM-Thiazolidinediones3b  vocab:isPartOf  data:CIG-DB-assess .
 
-data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
-        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
-        vocab:isSubGuidelineOf  data:CIG-DB-assess .
-data:RecDM-Thiazolidinediones3c  vocab:isPartOf  data:CIG-DB-assess .
-
-data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
-        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
-        vocab:isSubGuidelineOf  data:CIG-DB-assess .
 
 data:RecDM-Thiazolidinediones3c  vocab:isPartOf  data:CIG-DB-assess .
 
-data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
-        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
-        vocab:isSubGuidelineOf  data:CIG-DB-assess .
+
+data:RecDM-Thiazolidinediones3c  vocab:isPartOf  data:CIG-DB-assess .
+
 
 data:RecDM-Thiazolidinediones3e  vocab:isPartOf  data:CIG-DB-assess .
-data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
-        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
-        vocab:isSubGuidelineOf  data:CIG-DB-assess .
 
 data:RecDM-Thiazolidinediones4  vocab:isPartOf  data:CIG-DB-assess .
 
-data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
-        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
-        vocab:isSubGuidelineOf  data:CIG-DB-assess .
-data:RecDM-Thiazolidinediones5  vocab:isPartOf  data:CIG-DB-assess .
-
-data:subCIG-Sulphonylureas1  a    owl:NamedIndividual , vocab:subGuideline ;
-        rdfs:label              "first line oral treatment pathway for patients which are not overweight, or intolerant or contraindications for metformin "@en ;
-        vocab:isSubGuidelineOf  data:CIG-DB-assess .
 
 ## Recommendation
 data:RecDB-Thiazolidinediones1 {
