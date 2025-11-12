@@ -15,6 +15,33 @@
 @prefix vocab4i: <http://anonymous.org/vocab4i/> .
 @prefix tmr4i: <http://anonymous.org/vocab4i/> .
 
+data:CombDrugTLabaLama
+        rdf:type                   owl:NamedIndividual , vocab:DrugCombinationType ;
+        rdfs:label                 "long-acting muscarinic antagonist and long-acting beta-2 agonist combination therapy"@en ;
+        vocab:hasGroupingCriteria  data:TrMainMildPropAls , data:TrDecModPropAls , data:TrDecSevPropAls , data:TrDecVerySevPropAls .
+
+data:ActAdministerLabaLama
+        rdf:type                        owl:NamedIndividual , vocab:DrugAdministrationType ;
+        rdfs:label                      "administer LABA and LAMA combination therapy"@en ;
+        vocab:combinedAdministrationOf  data:CombDrugTLabaLama ;
+        vocab:hasComponent              data:ActAdministerLaba , data:ActAdministerLama .
+
+data:NonDrugTCatRslt  rdf:type  owl:NamedIndividual , vocab:NonDrugType ;
+        rdfs:label        "Assessment using chronic obstructive pulmonary disease assessment test (procedure)"@en .
+
+data:ActAdministerCatRslt
+        rdf:type             owl:NamedIndividual , vocab:NonDrugAdministrationType ;
+        rdfs:label           "perform COPD assessment test"@en ;
+        vocab:applicationOf  data:NonDrugTCatRslt .
+
+data:VacTPneumnVac  rdf:type  owl:NamedIndividual , vocab:VaccineType ;
+        rdfs:label        "pneumococcal vaccine product"@en .
+
+data:ActAdministerPneumnVac
+        rdf:type                owl:NamedIndividual , vocab:VaccinationType ;
+        rdfs:label              "administer pneumococcal vaccine"@en ;
+        vocab:vaccinationWith  data:VacTPneumnVac .
+
 data:DrugCatNSAID  a                   vocab:DrugType , owl:NamedIndividual ;
         rdfs:label                 "NSAID"@en ;
         vocab:hasGroupingCriteria  data:TrAntinflammatory , data:SitNonSteroidalDrug ;
