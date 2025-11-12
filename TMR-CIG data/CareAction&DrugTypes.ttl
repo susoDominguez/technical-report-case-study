@@ -24,7 +24,7 @@ data:ActAdministerLabaLama
         rdf:type                        owl:NamedIndividual , vocab:DrugAdministrationType ;
         rdfs:label                      "administer LABA and LAMA combination therapy"@en ;
         vocab:combinedAdministrationOf  data:CombDrugTLabaLama ;
-        vocab:hasComponent              data:ActAdministerLaba , data:ActAdministerLama .
+        vocab:hasComponentDrug              data:ActAdministerLaba , data:ActAdministerLama .
 
 data:NonDrugTCatRslt  rdf:type  owl:NamedIndividual , vocab:NonDrugType ;
         rdfs:label        "Assessment using chronic obstructive pulmonary disease assessment test (procedure)"@en .
@@ -42,7 +42,15 @@ data:ActAdministerPneumnVac
         rdfs:label              "administer pneumococcal vaccine"@en ;
         vocab:vaccinationWith  data:VacTPneumnVac .
 
-data:DrugCatNSAID  a                   vocab:DrugType , owl:NamedIndividual ;
+data:VacCatPneumnVac  rdf:type  owl:NamedIndividual , vocab:VaccineCategory ;
+        rdfs:label        "pneumococcal vaccine category"@en .
+
+data:ActAdministerCatPneumnVac
+        rdf:type                owl:NamedIndividual , vocab:VaccinationType ;
+        rdfs:label              "administer pneumococcal vaccine category"@en ;
+        vocab:vaccinationWith  data:VacCatPneumnVac .
+
+data:DrugCatNSAID  a                   vocab:DrugCategory , owl:NamedIndividual ;
         rdfs:label                 "NSAID"@en ;
         vocab:hasGroupingCriteria  data:TrAntinflammatory , data:SitNonSteroidalDrug ;
         vocab:hasSctId  <http://snomed.info/sct#16403005> ;
@@ -54,7 +62,7 @@ data:ActAdministerNSAID  a          owl:NamedIndividual , vocab:DrugAdministrati
         vocab:hasSctId          <http://snomed.info/sct#16403005> ;
         vocab:hasSctLbl         "Non-steroidal anti-inflammatory agent (product)"@en .
 
-data:DrugCatAnalgesic  a               vocab:DrugType , owl:NamedIndividual ;
+data:DrugCatAnalgesic  a               vocab:DrugCategory , owl:NamedIndividual ;
         rdfs:label                 "Analgesic"@en ;
         vocab:hasGroupingCriteria  data:TrPainkiller ;
         vocab:hasSctId  <http://snomed.info/sct#373265006> ;
@@ -92,7 +100,7 @@ data:ActAdministerPlateletAggregationInhibitor
         # vocab:subsumes          :ActAdministerSubsumed_B .
 
 data:DrugCatPlateletAggregationInhibitor
-        a                          vocab:DrugType , owl:NamedIndividual ;
+        a                          vocab:DrugCategory , owl:NamedIndividual ;
         rdfs:label                 "Platelet Aggregation Inhibitor"@en ;
         vocab:hasGroupingCriteria  data:TrDecreaseBC ;
         vocab:hasSctId  <http://snomed.info/sct#386858008> ;
@@ -113,7 +121,7 @@ data:ActAdministerDipyridamole
 
 
 data:DrugCatAntiBacterialAgent
-        a           vocab:DrugType , owl:NamedIndividual ;
+        a           vocab:DrugCategory , owl:NamedIndividual ;
         rdfs:label  "Antibacterial"@en ;
         vocab:hasGroupingCriteria  data:TrAntibacterialAgent ;
         vocab:hasSctId  <http://snomed.info/sct#419241000> ;
@@ -144,7 +152,7 @@ data:ActAdministerPPI  a            owl:NamedIndividual , vocab:DrugAdministrati
         vocab:hasSctId          <http://snomed.info/sct#870251000> ;
         vocab:hasSctLbl         "Proton pump inhibitor therapy (procedure)"@en .
 
-data:DrugCatPPI  a      vocab:DrugType , owl:NamedIndividual ;
+data:DrugCatPPI  a      vocab:DrugCategory , owl:NamedIndividual ;
         rdfs:label  "Proton pump inhibitor (PPI)"@en ;
         vocab:hasSctId  <http://snomed.info/sct#372525000> ;
         vocab:hasSctLbl  "Substance with hydrogen/potassium adenosine triphosphatase enzyme system inhibitor mechanism of action (substance)"@en .
@@ -182,7 +190,7 @@ data:ActAdministerAntiHypertensiveAgent
         vocab:hasSctLbl         "Antihypertensive agent (substance)"@en .
 
 data:DrugCatAntiHypertensiveAgent
-        a                          vocab:DrugType , owl:NamedIndividual ;
+        a                          vocab:DrugCategory , owl:NamedIndividual ;
         rdfs:label                 "Anti Hypertensive"@en ;
         vocab:hasGroupingCriteria  data:TrDecreaseBP ;
         vocab:hasSctId  <http://snomed.info/sct#372586001> ;
@@ -208,7 +216,7 @@ data:ActAdministerThiazide
         vocab:hasSctId          <http://snomed.info/sct#860766002> ;
         vocab:hasSctLbl         "Thiazide diuretic (substance)"@en .
 
-data:DrugCatThiazide  a  vocab:DrugType , owl:NamedIndividual ;
+data:DrugCatThiazide  a  vocab:DrugCategory , owl:NamedIndividual ;
         rdfs:label  "Thiazide"@en ;
         vocab:hasGroupingCriteria  data:TrDecreaseBP ;
         vocab:hasSctId  <http://snomed.info/sct#860766002> ;
